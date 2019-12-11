@@ -75,6 +75,9 @@ int Height(Node* p)
 /* Right rotation at a given node p */
 void SingleRotationWithLeftChild(Node*& p)
 {
+	if (p == nullptr)
+		return;
+
 	Node* p1 = p->Left;
 	
 	p->Left = p1->Right;
@@ -89,6 +92,9 @@ void SingleRotationWithLeftChild(Node*& p)
 /* Left rotation at a given node p */
 void SingleRotationWithRightChild(Node*& p)
 {
+	if (p == nullptr)
+		return;
+	
 	Node* p1 = p->Right;
 
 	p->Right = p1->Left;
@@ -103,6 +109,9 @@ void SingleRotationWithRightChild(Node*& p)
 /* Double rotation at a given node p: Left rotation at p->Left then Right rotation at p */
 void DoubleRotationWithLeftChild(Node*& p)
 {
+	if (p == nullptr)
+		return;
+
 	SingleRotationWithRightChild(p->Left);
 	SingleRotationWithLeftChild(p);
 }
@@ -110,6 +119,9 @@ void DoubleRotationWithLeftChild(Node*& p)
 /* Double rotation at a given node p: Right rotation at p->Right then Left rotation at p */
 void DoubleRotationWithRightChild(Node*& p)
 {
+	if (p == nullptr)
+		return;
+
 	SingleRotationWithLeftChild(p->Right);
 	SingleRotationWithRightChild(p);
 }
