@@ -1,0 +1,6 @@
+﻿  Student.cpp
+G:\CongHau\HCMUS\2nd Year\1st Semester\Data Structures and Algorithms\Review\Final-Exam-Revision\Final-Lab-18CLC3\Final-Exam\Student.cpp(10,21): warning C4018: '<': signed/unsigned mismatch
+G:\CongHau\HCMUS\2nd Year\1st Semester\Data Structures and Algorithms\Review\Final-Exam-Revision\Final-Lab-18CLC3\Final-Exam\Student.cpp(31,21): warning C4018: '<': signed/unsigned mismatch
+G:\CongHau\HCMUS\2nd Year\1st Semester\Data Structures and Algorithms\Review\Final-Exam-Revision\Final-Lab-18CLC3\Final-Exam\Student.cpp(58,21): warning C4018: '<': signed/unsigned mismatch
+G:\CongHau\HCMUS\2nd Year\1st Semester\Data Structures and Algorithms\Review\Final-Exam-Revision\Final-Lab-18CLC3\Final-Exam\Student.cpp(93,22): warning C4018: '<': signed/unsigned mismatch
+  Final-Exam.vcxproj -> G:\CongHau\HCMUS\2nd Year\1st Semester\Data Structures and Algorithms\Review\Final-Exam-Revision\Final-Lab-18CLC3\Debug\Final-Exam.exe
