@@ -1,0 +1,5 @@
+﻿  Binary_File_1.cpp
+G:\CongHau\HCMUS\2nd Year\1st Semester\Data Structures and Algorithms\Review\Final-Exam-Revision\File-Handling\Binary-File\Binary_File_1.cpp(20,22): warning C4018: '<': signed/unsigned mismatch
+G:\CongHau\HCMUS\2nd Year\1st Semester\Data Structures and Algorithms\Review\Final-Exam-Revision\File-Handling\Binary-File\Binary_File_1.cpp(45,21): warning C4018: '<': signed/unsigned mismatch
+G:\CongHau\HCMUS\2nd Year\1st Semester\Data Structures and Algorithms\Review\Final-Exam-Revision\File-Handling\Binary-File\Binary_File_1.cpp(97,21): warning C4018: '<': signed/unsigned mismatch
+  Binary-File.vcxproj -> G:\CongHau\HCMUS\2nd Year\1st Semester\Data Structures and Algorithms\Review\Final-Exam-Revision\File-Handling\Debug\Binary-File.exe
