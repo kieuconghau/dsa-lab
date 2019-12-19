@@ -5,6 +5,7 @@
 #include <vector>
 #include <fstream>
 #include <queue>
+#include <time.h>
 using namespace std;
 
 static const string INPUT_FILE_NAME = "data.txt";
@@ -45,7 +46,7 @@ vector<string> SearchGreater(Node* root, float s);
 
 float Average(Student st);
 
-void LoadData(Node*& root, string file_name);
+bool LoadData(Node*& root, string file_name);
 
 void Insert(Node*& root, Student st);
 
@@ -64,3 +65,12 @@ void DoubleRotationWithLeftChild(Node*& p);
 void DoubleRotationWithRightChild(Node*& p);
 
 void RemoveAll(Node*& root);
+
+
+bool IsNumber(string s);
+
+bool IsInRange(string s, int start, int end);
+
+void PrintOutputLine();
+
+bool IsFloat(string str);

@@ -6,9 +6,27 @@ void DisplayIDs(Node* root)
 	{
 		DisplayIDs(root->Left);
 
-		cout << root->Key.Average << endl;
-		for (int i = 0; i < root->Key.List.size(); ++i)
-			cout << " " << root->Key.List[i].ID << endl;
+		int const size = root->Key.List.size();
+		bool* table = new bool[size]();
+		
+		//cout << root->Key.Average << endl;
+		int count = 0;
+		while (count < size)
+		{
+			int i = rand() % size;
+			if (table[i] == false)
+			{
+				cout << " " << root->Key.List[i].ID << endl;
+				table[i] = true;
+				++count;
+			}
+		}
+
+		delete[] table;
+
+		//cout << root->Key.Average << endl;
+		//for (int i = 0; i < root->Key.List.size(); ++i)
+		//	cout << " " << root->Key.List[i].ID << endl;
 
 		DisplayIDs(root->Right);
 	}
@@ -71,41 +89,43 @@ float Average(Student st)
 	return (float)(st.Math + st.Literature + st.ForeignLanguage) / 3;
 }
 
-void LoadData(Node*& root, string file_name)
+bool LoadData(Node*& root, string file_name)
 {
-	RemoveAll(root);
-
 	ifstream fin(file_name);
 
-	if (fin.is_open())
+	if (!fin.is_open())
+		return false;
+
+	RemoveAll(root);
+
+	string line_info;
+	getline(fin, line_info);					// Header line
+
+	while (getline(fin, line_info))
 	{
-		string line_info;
-		getline(fin, line_info);					// Header line
+		Student st;
+		vector<string> sub_str;
+		char deli = ',';
+		int deli_idx;
 
-		while (getline(fin, line_info))
-		{
-			Student st;
-			vector<string> sub_str;
-			char deli = ',';
-			int deli_idx;
-
-			line_info += deli;
-			for (int i = 0; i < line_info.size(); i = deli_idx + 1) {
-				deli_idx = line_info.find(deli, i);
-				sub_str.push_back(line_info.substr(i, deli_idx - i));
-			}
-
-			st.ID = sub_str[0];
-			st.Math = stof(sub_str[1]);
-			st.Literature = stof(sub_str[2]);
-			st.ForeignLanguage = stof(sub_str[3]);
-			st.Note = sub_str[4];
-
-			Insert(root, st);
+		line_info += deli;
+		for (int i = 0; i < line_info.size(); i = deli_idx + 1) {
+			deli_idx = line_info.find(deli, i);
+			sub_str.push_back(line_info.substr(i, deli_idx - i));
 		}
 
-		fin.close();
+		st.ID = sub_str[0];
+		st.Math = stof(sub_str[1]);
+		st.Literature = stof(sub_str[2]);
+		st.ForeignLanguage = stof(sub_str[3]);
+		st.Note = sub_str[4];
+
+		Insert(root, st);
 	}
+
+	fin.close();
+
+	return true;
 }
 
 void Insert(Node*& root, Student st)
@@ -233,4 +253,57 @@ void RemoveAll(Node*& root)
 		delete root;
 		root = nullptr;
 	}
+}
+
+
+/* Main support functions */
+bool IsNumber(string s) {
+	if (s == "")
+		return false;
+
+	for (int i = 0; i < s.size(); ++i)
+		if (s[i] < '0' || s[i] > '9')
+			return false;
+	return true;
+}
+
+bool IsInRange(string s, int start, int end) {
+	if (!IsNumber(s))
+		return false;
+
+	int num = stoi(s);
+	return num >= start && num <= end;
+}
+
+void PrintOutputLine()
+{
+	cout << endl << ".=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.OUTPUT.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=." << endl;
+}
+
+bool IsFloat(string str) {
+	if (str == "")
+		return false;
+
+	int i = 0;
+	if (str[0] == '-')
+		i = 1;
+
+	int dot_count = 0;
+	for (; i < str.size(); ++i) {
+		if (str[i] == '.')
+			++dot_count;
+		else if (str[i] < '0' || str[i] > '9')
+			return false;
+	}
+
+	if (dot_count > 1)
+		return false;
+
+	if (str[0] == '.' && str.size() == 1)
+		return false;
+
+	if (str[0] == '-' && str[1] == '.' && str.size() == 2)
+		return false;
+
+	return true;
 }
