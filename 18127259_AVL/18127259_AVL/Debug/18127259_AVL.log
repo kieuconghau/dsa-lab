@@ -1,0 +1,12 @@
+﻿  Student_AVL.cpp
+C:\Users\kieuc_hbzhm2o\Desktop\18127259_AVL\18127259_AVL\Student_AVL.cpp(49,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\kieuc_hbzhm2o\Desktop\18127259_AVL\18127259_AVL\Student_AVL.cpp(78,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\kieuc_hbzhm2o\Desktop\18127259_AVL\18127259_AVL\Student_AVL.cpp(114,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\kieuc_hbzhm2o\Desktop\18127259_AVL\18127259_AVL\Student_AVL.cpp(264,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\kieuc_hbzhm2o\Desktop\18127259_AVL\18127259_AVL\Student_AVL.cpp(292,11): warning C4018: '<': signed/unsigned mismatch
+  main.cpp
+C:\Users\kieuc_hbzhm2o\Desktop\18127259_AVL\18127259_AVL\main.cpp(5,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\kieuc_hbzhm2o\Desktop\18127259_AVL\18127259_AVL\main.cpp(57,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\kieuc_hbzhm2o\Desktop\18127259_AVL\18127259_AVL\main.cpp(85,25): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  18127259_AVL.vcxproj -> C:\Users\kieuc_hbzhm2o\Desktop\18127259_AVL\Debug\18127259_AVL.exe
