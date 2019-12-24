@@ -6,13 +6,14 @@ int main()
 
 	Company* hash_table = CreateHashTable(company_list);
 
-	Company* cmp = Search(hash_table, "MB BANK - NGAN HANG QUAN DOI VIET NAM");
-
-	if (cmp)
+	Company* cmp;
+	for (int i = 0; i < company_list.size(); ++i)
 	{
+		cmp = Search(hash_table, company_list[i].Name);
 		cout << " - Name: " << cmp->Name << endl;
 		cout << " - Profit Tax: " << cmp->ProfitTax << endl;
 		cout << " - Address: " << cmp->Address << endl;
+		cout << endl;
 	}
 
 	delete[] hash_table;

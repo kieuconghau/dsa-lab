@@ -44,12 +44,17 @@ long long HashString(string company_name)
 	string s = company_name;
 	int p = 31;
 	long long p_pow = 1;
-	//long long m = 1e9 + 9;
-	long long m = SIZE_OF_HASH_TABLE;
+	long long m = 1e9 + 9;
+	//long long m = SIZE_OF_HASH_TABLE;
 
 	if (s.size() > 20)
 		s = s.substr(s.size() - 20, 20);
 
+	/*
+	Modular arithmetic:
+	  1. (A + B) mod C = ((A mod C) + (B mod C)) mod C
+	  2. (A * B) mod C = ((A mod C) * (B mod C)) mod C
+	*/
 	for (int i = 0; i < s.size(); ++i)
 	{
 		hash = (hash + s[i] * p_pow) % m;
@@ -80,7 +85,7 @@ void Insert(Company* hash_table, Company company)
 		return;
 	}
 	
-	int index = HashString(company.Name);
+	int index = HashString(company.Name) % SIZE_OF_HASH_TABLE;
 
 	while (hash_table[index].Name != NIL.Name)
 		index = (index + 1) % SIZE_OF_HASH_TABLE;
@@ -92,7 +97,7 @@ void Insert(Company* hash_table, Company company)
 
 Company* Search(Company* hash_table, string company_name)
 {
-	int index = HashString(company_name);
+	int index = HashString(company_name) % SIZE_OF_HASH_TABLE;
 
 	int count = 0;
 	while (hash_table[index].Name != company_name && count < SIZE_OF_HASH_TABLE)
@@ -100,6 +105,8 @@ Company* Search(Company* hash_table, string company_name)
 		index = (index + 1) % SIZE_OF_HASH_TABLE;
 		++count;
 	}
+
+	//cout << " - Hash value: " << index << endl;
 
 	if (count == SIZE_OF_HASH_TABLE)
 		return nullptr;
